@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {BrowserRouter as Router} from "react-router-dom";
+import AppRoutes from "./router/Routes";
+import { AuthProvider } from "./context/AuthContext";
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h5 className='text-4xl text-blue-500'>Hello World</h5>
-    </>
+    <AuthProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </AuthProvider>
   )
 }
 
-export default App
+export default App;
